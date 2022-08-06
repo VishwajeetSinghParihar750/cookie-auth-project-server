@@ -69,6 +69,8 @@ const login = async (req, res) => {
       .cookie("JWT_TOKEN", token, {
         maxAge: 86400000,
         httpOnly: true,
+        sameSite: false,
+        secure: true,
       })
       .send(user.toJSON());
   } catch (e) {
