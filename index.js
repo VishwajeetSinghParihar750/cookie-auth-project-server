@@ -1,6 +1,6 @@
-import cors from "cors";
-import express from "express";
-import mongoose from "mongoose";
+const cors = require("cors");
+const express = require("express");
+const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
 const { readdirSync } = require("fs");

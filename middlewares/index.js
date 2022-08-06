@@ -1,6 +1,6 @@
-import { verify } from "jsonwebtoken";
+const { verify } = require("jsonwebtoken");
 
-export const verifyLogin = (req, res, next) => {
+const verifyLogin = (req, res, next) => {
   const token = req.cookies && req.cookies.JWT_TOKEN;
   if (!token) {
     return res.status(400).send("Login required !");
@@ -16,3 +16,5 @@ export const verifyLogin = (req, res, next) => {
     res.status(400).send("Login required !");
   }
 };
+
+module.exports = { verifyLogin };

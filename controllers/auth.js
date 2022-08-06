@@ -1,10 +1,10 @@
-import User from "../models/user";
-import { hashPassword, comparePasswords } from "../util/auth";
-import { sign } from "jsonwebtoken";
+const User = require("../models/user");
+const { hashPassword, comparePasswords } = require("../util/auth");
+const { sign } = require("jsonwebtoken");
 
 // register routing
 
-export const register = async (req, res) => {
+const register = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
@@ -39,7 +39,7 @@ export const register = async (req, res) => {
 
 //login routing
 
-export const login = async (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -79,7 +79,7 @@ export const login = async (req, res) => {
 
 // logout
 
-export const logout = async (req, res) => {
+const logout = async (req, res) => {
   try {
     res.clearCookie("JWT_TOKEN");
     res.send("Logout Success!");
@@ -88,3 +88,5 @@ export const logout = async (req, res) => {
     res.send("Error... Try Again");
   }
 };
+
+module.exports = { register, login, logout };
