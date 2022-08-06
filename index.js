@@ -31,6 +31,7 @@ app.use(
     origin(origin, cb) {
       cb(null, origin);
     },
+    credentials: true,
   })
 );
 
