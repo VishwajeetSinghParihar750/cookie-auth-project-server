@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 // app.use(
 //   cors({
-//     origin: "https://cookie-auth-project-client.vercel.app/",
+//     origin: "http:localhost:3000",
 //     credentials: true,
 //   })
 // );
