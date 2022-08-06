@@ -26,7 +26,13 @@ app.use(cookieParser());
 //     credentials: true,
 //   })
 // );
-app.use(cors());
+app.use(
+  cors({
+    origin(origin, cb) {
+      cb(null, origin);
+    },
+  })
+);
 
 app.use(express.json());
 app.use(morgan("dev")); // gives data about incoming requests on console
